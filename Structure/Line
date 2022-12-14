@@ -1,0 +1,20 @@
+class Line:
+    def __init__(self,*args):
+        if len(args)==1:
+            self.line=args[0]
+        if len(args)==2:
+            self.line=[args[0],args[1]]
+    def shift(self,f,t):#shift the line endpoint from "f" to "t"
+        if self.line[0]==f:
+            self.line.pop(0)
+            self.line.append(t)
+            return self.line
+        elif self.line[1]==f:
+            self.line.pop(1)
+            self.line.append(t)
+            return self.line
+    def ifcirc(self):#if the line from one point to itself=1. if not=0
+        if self.line[0]==self.line[1]:
+            return 1
+        else:
+            return 0
